@@ -164,7 +164,7 @@ def process_lyrics(song_name: str) -> dict:
     #组织各类可视化数据
     data = {
         "song": song_name,
-        "wordCloud": g_wordcloud_barchart_data(word_freq),
+        "wordCloud": generate_wordcloud_data(word_freq),
         "arcDiagram": generate_arc_data(raw_lyrics, word_freq, num_categories=3)
     }
     return data
