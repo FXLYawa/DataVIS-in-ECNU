@@ -6,8 +6,15 @@ from dashscope import ImageSynthesis
 import os
 
 
-def ask(s:str):
-    rsp = ImageSynthesis.call(api_key="sk-2dc6bf5af7b94e23ae4a674055798fa5",
+def get_api_key(file_path: str) -> str:
+    """从指定的文件中读取 API 密钥"""
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"API 密钥文件未找到: {file_path}")
+    with open(file_path, 'r') as f:
+        return f.read().strip()
+
+def ask(s:str, api_key: str):
+    rsp = ImageSynthesis.call(api_key=api_key,
                             model="wanx2.1-t2i-turbo",
                             prompt=s,
                             n=1,
@@ -23,6 +30,10 @@ def ask(s:str):
     return res
 
 if __name__ == "__main__":
+    file_dir = os.path.dirname(os.path.abspath(__file__))
+    api_key_file = os.path.join(file_dir, 'apikey.txt')  
+    api_key = get_api_key(api_key_file)
+    
     prompt = input()
     arr = ask(prompt)
     for x in arr:
