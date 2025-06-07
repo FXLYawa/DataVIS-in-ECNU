@@ -33,19 +33,12 @@ STOP_WORDS = set([
     '每次','自己','某处','那个','反而','手中','带来','其中','还会','各自','个别','一秒','身为','一条',
     '中藏','每一格','悄悄的','成歌','无处','首歌','同个','看到','如今','就够','不了','怎么','太好了','说完','听听','就算'
 ])
+file_dir = os.path.dirname(os.path.abspath(__file__))
 
-#根据前端传入歌曲名称，寻找对应的歌词文件并读取
-def load_lyrics_by_name(song_name: str, base_dir: str = ".") -> str:
-    """
-    给定一个歌曲名称（不带后缀），在 base_dir 目录下搜索 "<song_name>.txt" 文件并返回它的文本内容。
-    如果未找到，则抛出 FileNotFoundError。
-    """
-    filename = f"{song_name}.txt"
-    filepath = os.path.join(base_dir, filename)
-    if not os.path.isfile(filepath):
-        raise FileNotFoundError(f"未找到歌词文件：{filepath}")
-    with open(filepath, "r", encoding="utf-8") as f:
-        return f.read()
+def get_lyrics(name: str) -> str:
+    lyrics_file = os.path.join(file_dir, 'data', name+'.txt')  
+    with open(lyrics_file, 'r') as f:
+        return f.read().strip()
 
 # 2. 文本清洗函数
 def clean_lyrics(lyrics_text: str) -> str:
@@ -78,12 +71,12 @@ def get_word_frequency(lyrics_text: str) -> list:
 
 
 #4. 生成词云数据（直接返回 word_freq 即可）
-def g_wordcloud_barchart_data(word_freq: list) -> list:
+def generate_wordcloud_data(word_freq: list) -> list:
     return word_freq
 
 
 #5. 生成柱状图数据（返回二维数组的格式）
-def generate_bar_chart_data(word_freq: list, top_n: int = 20) -> dict:
+def generate_barchart_data(word_freq: list, top_n: int = 20) -> dict:
     return word_freq
 
 
@@ -162,7 +155,7 @@ def generate_arc_data(lyrics_text: str, word_freq: list, num_categories: int = 3
 #整合调用
 def process_lyrics(song_name: str) -> dict:
     #读取并清洗原始歌词
-    raw_lyrics = load_lyrics_by_name(song_name)
+    raw_lyrics = get_lyrics(song_name)
     cleaned = clean_lyrics(raw_lyrics)
 
     #统计词频
