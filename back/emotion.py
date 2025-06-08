@@ -5,20 +5,33 @@ import re
 import os
 from typing import List
 
+SONG_ID_TO_FILE = {
+    "jhys": "JJ1-jhys",
+    "zsdjh": "JJ2-zsdjh",
+    "zhs": "JJ3-zhs",
+    "lkdnyx": "JJ4-lkdnyx",
+    "xcz": "JJ5-xcz"
+}
 
-def analyze_lyrics_to_vectors(name: str) -> List[list]:
+def analyze_lyrics_to_vectors(song_id: str) -> List[list]:
     """
     将歌词文本文件转换为情感向量数组
     
     参数:
-        file_name: 位于back/data目录下的歌词文件名(不含路径)
+        song_id: 歌曲ID (jhys, zsdjh等)
     
     返回:
         list: [[情感1, 情感2, 词语, 词频], ...]
     """
+    #通过song_id获取实际文件名
+    if song_id not in SONG_ID_TO_FILE:
+        raise ValueError(f"无效的歌曲ID: {song_id}")
+    
+    file_name = SONG_ID_TO_FILE[song_id]
+    
     # 1. 获取文件绝对路径
     file_dir = os.path.dirname(os.path.abspath(__file__))
-    text_path = os.path.join(file_dir, 'data', name + 'txt')
+    text_path = os.path.join(file_dir, 'data', file_name + '.txt')
     
     # 2. 读取文件内容
     if not os.path.exists(text_path):
@@ -49,5 +62,5 @@ def analyze_lyrics_to_vectors(name: str) -> List[list]:
     return result
 
 if __name__ == "__main__":
-    a=analyze_lyrics_to_vectors("JJ1-jhys")
+    a=analyze_lyrics_to_vectors("jhys")
     print(a)

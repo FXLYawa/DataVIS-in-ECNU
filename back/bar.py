@@ -35,11 +35,29 @@ STOP_WORDS = set([
 ])
 file_dir = os.path.dirname(os.path.abspath(__file__))
 
-def get_lyrics(name: str) -> str:
-    lyrics_file = os.path.join(file_dir, 'data', name+'.txt')  
-    with open(lyrics_file, 'r') as f:
-        return f.read().strip()
+# 添加歌曲名称到文件名的映射字典
+SONG_FILE_MAPPING = {
+    "最好是": "JJ3-zhs.txt",
+    "交换余生": "JJ1-jhys.txt",      # 示例，根据实际文件修改
+    "暂时的记号": "JJ2-zsdjh.txt",
+    "离开的那一些":"JJ4-lkdnyx.txt",
+    "幸存者":"JJ5-xcz"# 示例，根据实际文件修改
+}
 
+SONG_ID_MAPPING = {
+    "zhs": "最好是",
+    "jhys": "交换余生",
+    "zsdjh": "暂时的记号",
+    "lkdnyx": "离开的那一些",
+    "xcz": "幸存者"
+}
+
+def get_lyrics(name: str) -> str:
+    # 从映射字典获取实际文件名，如果找不到则使用原名称
+    filename = SONG_FILE_MAPPING.get(name, name + ".txt")
+    lyrics_file = os.path.join(file_dir, 'data', filename)  
+    with open(lyrics_file, 'r', encoding='utf-8') as f:
+        return f.read().strip()
 # 2. 文本清洗函数
 def clean_lyrics(lyrics_text: str) -> str:
     """将连续的空白字符（空格、换行、制表符等）替换为单个空格
