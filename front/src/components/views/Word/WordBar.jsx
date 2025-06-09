@@ -3,19 +3,36 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import * as echarts from 'echarts';
 import '../../../styles/Word.css';
+import axios from 'axios';
 
-function getData(song) {
-  return ([
+const baseurl='http://127.0.0.1:8000/api';
+
+async function getData(song) {
+   try {
+    const response = await axios.get(baseurl+song.bar);
+  /*  console.log('API响应数据:', response.data);
+    console.log([
     { 'name': '医学研究', 'value': 300 },
     { 'name': '动物保护', 'value': 130 },
     { 'name': '航海', 'value': 200 }
-  ]);
+  ])*/
+    return response.data;
+  } catch (error) {
+    console.error('请求失败:', error);
+    throw error;
+  }
 }
 
-function BarDraw(chartDom, song) {
+/*return ([
+    { 'name': '医学研究', 'value': 300 },
+    { 'name': '动物保护', 'value': 130 },
+    { 'name': '航海', 'value': 200 }
+  ]);*/
+async function BarDraw(chartDom, song) {
   var myChart = echarts.init(chartDom);
+  const data=await getData(song);
   var option = {
-    dataset: {source: getData(song)},
+    dataset: {source: data},
     grid: { containLabel: true },
     xAxis: { 
       name: '频率' ,

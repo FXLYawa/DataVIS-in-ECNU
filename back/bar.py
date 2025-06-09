@@ -18,21 +18,7 @@ jieba.add_word('出尔反尔')
 
 
 # 停用词集合（示例）
-STOP_WORDS = set([
-    '的', '了', '在', '是', '我', '你', '他', '她', '它', '我们', '你们', '他们',
-    '这', '那', '有', '没有', '和', '与', '或', '就', '也', '都', '还', '又',
-    '着', '吧', '啊', '呀', '呢', '吗', '哦', '啦', '吧', '得', '地', '个',
-    '很', '太', '真', '更', '最', '会', '要', '可以', '可能', '能', '可', '把',
-    '被', '给', '从', '向', '到', '在', '从', '向', '到', '于', '而', '但',
-    '却', '虽然', '但是', '如果', '那么', '因为', '所以', '为了', '以', '之',
-    '其', '将', '及', '等', '等等', '一些', '一点', '一切', '一样', '一种',
-    '一般', '一定', '一起', '一直','会以','就是','那些','什么','第几','之外','一个','一等',
-    '所谓','所有','不去','哪里','还有','不断','到底','几公里','是因为','有种','有些','成为' ,'放在',
-    '是否','这时候','经过','几个','来到','如何','认得','发着','地应','或能','真的',
-    '背着','只是','得到','一刻','几毫克','我要','不由得',
-    '每次','自己','某处','那个','反而','手中','带来','其中','还会','各自','个别','一秒','身为','一条',
-    '中藏','每一格','悄悄的','成歌','无处','首歌','同个','看到','如今','就够','不了','怎么','太好了','说完','听听','就算'
-])
+
 file_dir = os.path.dirname(os.path.abspath(__file__))
 
 # 添加歌曲名称到文件名的映射字典
@@ -77,7 +63,7 @@ def get_word_frequency(lyrics_text: str) -> list:
     """
     words = jieba.lcut(lyrics_text)
     # 过滤单字词 & 停用词
-    filtered = [w for w in words if len(w) > 1 and w not in STOP_WORDS]
+    filtered = [w for w in words if len(w) > 1 ]
     counter = Counter(filtered)
     # 转成字典列表并排序
     word_freq = sorted(
@@ -112,7 +98,7 @@ def generate_arc_data(lyrics_text: str, word_freq: list, num_categories: int = 3
       5. 最后用 KMeans 将这 30 个词做简单聚类，给每个节点分配一个 category 编号。
     """
     #拿前 30 个高频词（如果不足 30，就取全部）
-    top_words = [wf["name"] for wf in word_freq[:min(30, len(word_freq))]]
+    top_words = [wf["name"] for wf in word_freq[:]]
     top_values = {wf["name"]: wf["value"] for wf in word_freq}
 
     #给每个top_word生成一个随机向量用于聚类
@@ -143,7 +129,7 @@ def generate_arc_data(lyrics_text: str, word_freq: list, num_categories: int = 3
         #保留既在top_words里满足len>1且非停用词
         filtered_in_line = [
             w for w in words_in_line
-            if w in top_words and len(w) > 1 and w not in STOP_WORDS
+            if w in top_words and len(w) > 1 
         ]
         # 如果同一行里出现了多个 top_words，就把它们两两连边
         for i in range(len(filtered_in_line)):

@@ -4,32 +4,25 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import * as echarts from 'echarts';
 import '../../../styles/Word.css';
+import axios from 'axios'; 
 
-function getData(song) {
-  return ({
-    "nodes": [
-      {"id": "0", "name": "awa", "symbolSize": 50, "value": 50, "category": 0},
-      {"id": "1", "name": "qaq", "symbolSize": 30, "value": 30, "category": 0},
-      {"id": "2", "name": "=-=", "symbolSize": 20, "value": 20, "category": 1},
-      {"id": "3", "name": "=.=", "symbolSize": 10, "value": 10, "category": 1},
-    ],
-    "links": [
-      {"source": "1","target": "0"},
-      {"source": "2","target": "0"},
-      {"source": "3","target": "0"},
-      {"source": "3","target": "2"},
-    ],
-    "categories": [
-      {"name": "A"},
-      {"name": "B"},
-    ]
-  });
+const baseurl='http://127.0.0.1:8000/api';
+
+async function getData(song) {
+  try {
+    const response = await axios.get(baseurl+song.link);
+    console.log('请求成功:', response.data);
+    return response.data;
+  } catch (error) {
+    console.error('请求失败:', error);
+    throw error;
+  }
 }
 
-function LinkDraw(chartDom, song) {
+async function LinkDraw(chartDom, song) {
   var myChart = echarts.init(chartDom);
   
-  var graph = getData(song);
+  const graph =await getData(song);
 
   var option = {
     title: {

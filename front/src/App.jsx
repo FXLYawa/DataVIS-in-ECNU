@@ -21,8 +21,11 @@ const CONTENT_OPTIONS = [
  * 格式：{ id: string | number, name: string, artist: string, url: string (歌曲文件地址) … }
  */
 const SONG_LIST = [
-  { "id": '1', 'name': '交换余生', 'artist': '林俊杰', 'music_url': '/林俊杰-交换余生.mp3', "cover_url": 'https://upload.cc/i1/2025/06/01/zZ0Is5.jpg', 'lyrics': '/林俊杰-交换余生.lrc' },
-  { "id": '2', name: 'Song B', artist: 'Artist B', music_url: '/audio/song-a.mp3', "cover_url": 'https://upload.cc/i1/2025/06/01/zZ0Is5.jpg', lyrics: '' },
+  { "id": '1', 'name': '交换余生', 'artist': '林俊杰', 'music_url': '/mp3/林俊杰-交换余生.mp3', "cover_url": 'https://upload.cc/i1/2025/06/01/zZ0Is5.jpg', 'lyrics': '/lrc/林俊杰-交换余生.lrc', 'bar':'/bar/cloud/jhys', 'emotion':'/emotion/jhys', 'link':'/bar/arc/jhys'},
+  { "id": '2', 'name': '暂时的记号', 'artist': '林俊杰', 'music_url': '/mp3/林俊杰-暂时的记号.mp3', "cover_url": 'https://upload.cc/i1/2025/06/01/zZ0Is5.jpg', 'lyrics': '/lrc/林俊杰-暂时的记号.lrc', 'bar':'/bar/cloud/zsdjh', 'emotion':'/emotion/zsdjh', 'link':'/bar/arc/zsdjh'},
+  { "id": '3', 'name': '最好是', 'artist': '林俊杰', 'music_url': '/mp3/林俊杰-最好是.mp3', "cover_url": 'https://upload.cc/i1/2025/06/01/zZ0Is5.jpg', 'lyrics': '/lrc/林俊杰-最好是.lrc' ,'bar':'/bar/cloud/zhs', 'emotion':'/emotion/zhs', 'link':'/bar/arc/zhs'},
+  { "id": '4', 'name': '离开的那一些', 'artist': '林俊杰', 'music_url': '/mp3/林俊杰-离开的那一些.mp3', "cover_url": 'https://upload.cc/i1/2025/06/01/zZ0Is5.jpg', 'lyrics': '/lrc/林俊杰-离开的那一些.lrc' ,'bar':'/bar/cloud/lkdnyx', 'emotion':'/emotion/lkdnyx', 'link':'/bar/arc/lkdnyx'},
+  { "id": '5', 'name': '幸存者', 'artist': '林俊杰', 'music_url': '/mp3/林俊杰-幸存者.mp3', "cover_url": 'https://upload.cc/i1/2025/06/01/zZ0Is5.jpg', 'lyrics': '/lrc/林俊杰-幸存者.lrc','bar':'/bar/cloud/xcz', 'emotion':'/emotion/xcz', 'link':'/bar/arc/xcz' }
 ];
 
 function App() {

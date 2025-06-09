@@ -4,18 +4,23 @@ import React, { useLayoutEffect, useRef } from 'react';
 import * as echarts from 'echarts';
 import 'echarts-wordcloud';
 import '../../../styles/Word.css';
+import axios from 'axios';
 
-function getData(song) {
-  return ([
-    { 'name': '医学研究', 'value': 300 },
-    { 'name': '动物保护', 'value': 130 },
-    { 'name': '航海', 'value': 200 }
-  ]);
+const baseurl='http://127.0.0.1:8000/api';
+
+async function getData(song) {
+  try {
+    const response = await axios.get(baseurl+song.bar);
+    return response.data;
+  } catch (error) {
+    console.error('请求失败:', error);
+    throw error;
+  }
 }
 
-function  CloudDraw(chartDom, song) {
+async function  CloudDraw(chartDom, song) {
   var myCloud = echarts.init(chartDom);
-
+  const data=await getData(song);
   var option = {
     tooltip: {
       show: true
@@ -41,7 +46,7 @@ function  CloudDraw(chartDom, song) {
           return 'rgb(' + [Math.round(Math.random() * 160),Math.round(Math.random() * 160),Math.round(Math.random() * 160)].join(',') + ')';
         }
       },  
-      data: getData(song), // 词云图的数据
+      data: data, // 词云图的数据
       emphasis: {
         focus: 'self',
         textStyle: {

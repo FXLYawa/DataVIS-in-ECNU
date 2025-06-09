@@ -4,21 +4,42 @@ import React, { useLayoutEffect, useRef } from 'react';
 import '../styles/Emotion.css';
 import * as echarts from 'echarts';
 import ecStat from 'echarts-stat';
+import axios from 'axios';
 
+const baseurl='http://127.0.0.1:8000/api';
 
-function getData(song) {
-  return ([
+async function getData(song) {
+  //console.log(baseurl+song.emotion);
+  try {
+    const response = await axios.get(baseurl+song.emotion);
+    //console.log(baseurl+song.emotion);
+    console.log('请求成功:', response.data.vectors );
+    console.log([
     [3.275154, 2.957587, 'awa', 1],
     [-3.344465, 2.603513, 'txt', 10],
     [0.355083, -3.376585, 'qaq', 50],
     [1.852435, 3.547351, '=-=', 100],
     [-2.078973, 2.552013, '=.=', 8],
-  ]);
+  ])
+    return response.data.vectors;
+
+  } catch (error) {
+    console.error('请求失败:', error);
+    throw error;
+  }
 }
 
-function  EmotionDraw(chartDom, song) {
-  var myChart = echarts.init(chartDom);
+/*return ([
+    [3.275154, 2.957587, 'awa', 1],
+    [-3.344465, 2.603513, 'txt', 10],
+    [0.355083, -3.376585, 'qaq', 50],
+    [1.852435, 3.547351, '=-=', 100],
+    [-2.078973, 2.552013, '=.=', 8],
+  ]);*/
 
+async function  EmotionDraw(chartDom, song) {
+  var myChart = echarts.init(chartDom);
+  const data = await getData(song);
   echarts.registerTransform(ecStat.transform.clustering);
 
   var CLUSTER_COUNT = 6;
@@ -48,7 +69,7 @@ function  EmotionDraw(chartDom, song) {
     dataset: [
       {
         // dimensions: originDims,
-        source: getData(song),
+        source: data,
       },
       {
         transform: {
