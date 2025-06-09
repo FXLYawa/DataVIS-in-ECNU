@@ -64,10 +64,10 @@ def imaginative(song_id: str):
     
     # 4. 生成图片
     arr = ask(prompt, api_key)
-    for x in arr:
-        file_name = PurePosixPath(unquote(urlparse(x).path)).parts[-1]
-        with open('./{}'.format(file_name), 'wb+') as f:
-            f.write(requests.get(x).content)
+    # for x in arr:
+    #     file_name = PurePosixPath(unquote(urlparse(x).path)).parts[-1]
+    #     with open('./{}'.format(file_name), 'wb+') as f:
+    #         f.write(requests.get(x).content)
     return arr
 
 

@@ -21,11 +21,11 @@ const CONTENT_OPTIONS = [
  * 格式：{ id: string | number, name: string, artist: string, url: string (歌曲文件地址) … }
  */
 const SONG_LIST = [
-  { "id": '1', 'name': '交换余生', 'artist': '林俊杰', 'music_url': '/mp3/林俊杰-交换余生.mp3', "cover_url": 'https://upload.cc/i1/2025/06/01/zZ0Is5.jpg', 'lyrics': '/lrc/林俊杰-交换余生.lrc', 'head':'/jhys'},
-  { "id": '2', 'name': '暂时的记号', 'artist': '林俊杰', 'music_url': '/mp3/林俊杰-暂时的记号.mp3', "cover_url": 'https://upload.cc/i1/2025/06/01/zZ0Is5.jpg', 'lyrics': '/lrc/林俊杰-暂时的记号.lrc', 'head':'/zsdjh'},
-  { "id": '3', 'name': '最好是', 'artist': '林俊杰', 'music_url': '/mp3/林俊杰-最好是.mp3', "cover_url": 'https://upload.cc/i1/2025/06/01/zZ0Is5.jpg', 'lyrics': '/lrc/林俊杰-最好是.lrc' ,'head':'/zhs'},
-  { "id": '4', 'name': '离开的那一些', 'artist': '林俊杰', 'music_url': '/mp3/林俊杰-离开的那一些.mp3', "cover_url": 'https://upload.cc/i1/2025/06/01/zZ0Is5.jpg', 'lyrics': '/lrc/林俊杰-离开的那一些.lrc' ,'head':'/lkdnyx'},
-  { "id": '5', 'name': '幸存者', 'artist': '林俊杰', 'music_url': '/mp3/林俊杰-幸存者.mp3', "cover_url": 'https://upload.cc/i1/2025/06/01/zZ0Is5.jpg', 'lyrics': '/lrc/林俊杰-幸存者.lrc','head':'/xcz' }
+  { "id": '1', 'name': '交换余生', 'artist': '林俊杰', 'music_url': '/mp3/林俊杰-交换余生.mp3', "cover_url": '/cover/cover_jhys.jpg', 'lyrics': '/lrc/林俊杰-交换余生.lrc', 'head':'/jhys'},
+  { "id": '2', 'name': '暂时的记号', 'artist': '林俊杰', 'music_url': '/mp3/林俊杰-暂时的记号.mp3', "cover_url": '/cover/cover_zsdjh.jpg', 'lyrics': '/lrc/林俊杰-暂时的记号.lrc', 'head':'/zsdjh'},
+  { "id": '3', 'name': '最好是', 'artist': '林俊杰', 'music_url': '/mp3/林俊杰-最好是.mp3', "cover_url": '/cover/cover_zhs.jpg', 'lyrics': '/lrc/林俊杰-最好是.lrc' ,'head':'/zhs'},
+  { "id": '4', 'name': '离开的那一些', 'artist': '林俊杰', 'music_url': '/mp3/林俊杰-离开的那一些.mp3', "cover_url": '/cover/cover_lkdnyx.jpg', 'lyrics': '/lrc/林俊杰-离开的那一些.lrc' ,'head':'/lkdnyx'},
+  { "id": '5', 'name': '幸存者', 'artist': '林俊杰', 'music_url': '/mp3/林俊杰-幸存者.mp3', "cover_url": '/cover/cover_xcz.jpg', 'lyrics': '/lrc/林俊杰-幸存者.lrc','head':'/xcz' }
 ];
 
 function App() {

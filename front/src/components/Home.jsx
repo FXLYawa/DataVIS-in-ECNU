@@ -12,11 +12,11 @@ const intro = '            「林俊杰音乐可视化互动平台Always Online�
 function Home() {
   // 示例数据：可播放歌曲列表（仅用于展示）
   const Songs = [
-    { link: '#', text: '交换余生', image: 'https://picsum.photos/600/400?random=1' },
-    { link: '#', text: '暂时的记号', image: 'https://picsum.photos/600/400?random=2' },
-    { link: '#', text: '最好是', image: 'https://picsum.photos/600/400?random=3' },
-    { link: '#', text: '离开的那一些', image: 'https://picsum.photos/600/400?random=4' },
-    { link: '#', text: '幸存者', image: 'https://picsum.photos/600/400?random=5' }
+    { link: '#', text: '交换余生', image: '/cover/cover_jhys.jpg' },
+    { link: '#', text: '暂时的记号', image: '/cover/cover_zsdjh.jpg' },
+    { link: '#', text: '最好是', image: '/cover/cover_zhs.jpg' },
+    { link: '#', text: '离开的那一些', image: '/cover/cover_lkdnyx.jpg' },
+    { link: '#', text: '幸存者', image: '/cover/cover_xcz.jpg' }
   ];
 
   const imagelist = [
