@@ -31,7 +31,7 @@ const SongController = forwardRef(({ audioSrc, onTimeChange, onPlayClick, onPaus
     },
     pause: () => {
       // 同理，这里用 internalAudio.pause() 也行
-      internalAudio && internalAudio.pause();
+      containerRef.current.querySelector('.wave-container canvas')?.dispatchEvent(new Event('pause')); 
     },
     getAudio: () => internalAudio
   }), [internalAudio]);

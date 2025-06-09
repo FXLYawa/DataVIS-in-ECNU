@@ -109,7 +109,7 @@ function Lyrics({ lrcPath, currentTime }) {
         recoverAutoScrollInterval={50}
         lrc={lrcText}
         lineRenderer={lineRenderer}
-        currentMillisecond={currentTime}
+        currentMillisecond={currentTime * 1000}
         verticalSpace={true}
       />
     </div>

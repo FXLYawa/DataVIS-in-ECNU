@@ -7,15 +7,24 @@ import '../styles/Music.css';
 
 
 const Music = ({ song }) => {
-
+  const currentTimeRef = useRef(0); // 使用 useRef 来存储当前时间，避免不必要的重新渲染
   const [currentTime, setCurrentTime] = useState(0);
   const [audioEl, setAudioEl] = useState(null);
   const songControllerRef = useRef(null);
 
-  // 当 ReactAudioWave 播放进度更新时，会传过来 time（秒）
   const handleTimeChange = (time) => {
-    setCurrentTime(time);
+    if (Math.abs(currentTimeRef.current - time) > 0.1) { // 只有当时间有较大变化时才更新状态
+      console.log('>>> 当前播放时间（秒）：', time);
+      setCurrentTime(time); // 更新状态
+      currentTimeRef.current = time;  // 更新 useRef 保存的时间
+    }
   };
+
+  // // 当 ReactAudioWave 播放进度更新时，会传过来 time（秒）
+  // const handleTimeChange = (time) => {
+  //   console.log('>>> 当前播放时间（秒）：', time);
+  //   setCurrentTime(time);
+  // };
 
   // 当父组件想要拿内部 <audio> 时，可以这么写
   useEffect(() => {
@@ -53,7 +62,7 @@ const Music = ({ song }) => {
         </div>
 
         <div className='music-lyrics'>
-          <Lyrics lrcPath={song.lyrics} currentTime={currentTime*1000} />
+          <Lyrics lrcPath={song.lyrics} currentTime={currentTime} />
         </div>
 
       </div>
