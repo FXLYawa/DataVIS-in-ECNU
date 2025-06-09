@@ -5,6 +5,7 @@ import re
 import numpy as np
 from sklearn.cluster import KMeans
 from collections import Counter
+from random import shuffle
 
 jieba.initialize()
 jieba.add_word('听雨')
@@ -113,11 +114,11 @@ def generate_arc_data(lyrics_text: str, word_freq: list, num_categories: int = 3
         nodes.append({
             "id": str(idx),
             "name": w,
-            "symbolSize": top_values[w],
+            "symbolSize": top_values[w]*8,
             "value": top_values[w],
             "category": int(labels[idx])
         })
-
+    shuffle(nodes)  # 打乱顺序，增加随机性
     #构建边（links）：基于“同一行歌词共同出现”
     #把清洗后的歌词按行拆分
     lines = [line.strip() for line in lyrics_text.split("\n") if line.strip()]
@@ -169,7 +170,7 @@ def process_lyrics(song_name: str) -> dict:
     data = {
         "song": song_name,
         "wordCloud": generate_wordcloud_data(word_freq),
-        "arcDiagram": generate_arc_data(raw_lyrics, word_freq, num_categories=3)
+        "arcDiagram": generate_arc_data(raw_lyrics, word_freq, num_categories=6)
     }
     return data
 

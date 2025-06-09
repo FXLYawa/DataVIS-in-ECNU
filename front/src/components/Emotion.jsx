@@ -145,7 +145,7 @@ async function  EmotionDraw(chartDom, song) {
         tooltip: [0, 1, 2, 3],
       },
       symbolSize: function (value, params) {
-        return value[3]; 
+        return value[3]*4; 
       },
       // symbolSize: 100,
       itemStyle: {

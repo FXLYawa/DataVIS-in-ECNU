@@ -70,6 +70,7 @@
   /* 上方标题 / 封面区域 */
   .title-box {
     flex: 0 0 30%;  /* 刚好占父容器高度的 40% */
+    flex-direction: column;
     background-color: #f5fff3;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(50, 115, 75, 0.1);
