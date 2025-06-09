@@ -6,11 +6,11 @@ import * as echarts from 'echarts';
 import '../../../styles/Word.css';
 import axios from 'axios'; 
 
-const baseurl='http://127.0.0.1:8000/api';
+const baseurl='http://127.0.0.1:8000/api/bar/arc';
 
 async function getData(song) {
   try {
-    const response = await axios.get(baseurl+song.link);
+    const response = await axios.get(baseurl+song.head);
     console.log('请求成功:', response.data);
     return response.data;
   } catch (error) {

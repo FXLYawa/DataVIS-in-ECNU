@@ -6,11 +6,11 @@ import 'echarts-wordcloud';
 import '../../../styles/Word.css';
 import axios from 'axios';
 
-const baseurl='http://127.0.0.1:8000/api';
+const baseurl='http://127.0.0.1:8000/api/bar/cloud';
 
 async function getData(song) {
   try {
-    const response = await axios.get(baseurl+song.bar);
+    const response = await axios.get(baseurl+song.head);
     return response.data;
   } catch (error) {
     console.error('请求失败:', error);

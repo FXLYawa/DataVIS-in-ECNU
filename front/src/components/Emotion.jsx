@@ -6,12 +6,12 @@ import * as echarts from 'echarts';
 import ecStat from 'echarts-stat';
 import axios from 'axios';
 
-const baseurl='http://127.0.0.1:8000/api';
+const baseurl='http://127.0.0.1:8000/api/emotion';
 
 async function getData(song) {
   //console.log(baseurl+song.emotion);
   try {
-    const response = await axios.get(baseurl+song.emotion);
+    const response = await axios.get(baseurl+song.head);
     //console.log(baseurl+song.emotion);
     console.log('请求成功:', response.data.vectors );
     console.log([

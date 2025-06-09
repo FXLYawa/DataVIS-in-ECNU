@@ -5,11 +5,11 @@ import * as echarts from 'echarts';
 import '../../../styles/Word.css';
 import axios from 'axios';
 
-const baseurl='http://127.0.0.1:8000/api';
+const baseurl='http://127.0.0.1:8000/api/bar/cloud';
 
 async function getData(song) {
    try {
-    const response = await axios.get(baseurl+song.bar);
+    const response = await axios.get(baseurl+song.head);
   /*  console.log('API响应数据:', response.data);
     console.log([
     { 'name': '医学研究', 'value': 300 },

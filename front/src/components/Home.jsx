@@ -19,11 +19,18 @@ function Home() {
     { link: '#', text: '幸存者', image: 'https://picsum.photos/600/400?random=5' }
   ];
 
+  const imagelist = [
+    {image:'/photo/JJ1.jpg',text:''},
+    {image:'/photo/JJ2.jpg',text:''},
+    {image:'/photo/JJ3.jpg',text:''},
+    {image:'/photo/JJ4.jpg',text:''}
+  ];
+
   return (
     <div className="home-container">
       <aside className="home-left">
         <div className="cover-box">
-          <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} />
+          <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} items={imagelist} />
         </div>
 
         <div className='song-list-box'>
