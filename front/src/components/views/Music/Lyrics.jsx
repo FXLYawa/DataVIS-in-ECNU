@@ -83,7 +83,7 @@ function Lyrics({ lrcPath, currentTime }) {
         <div style={{
           position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          backgroundColor: 'rgba(65, 170, 51, 0.8)', zIndex: 10
+          backgroundColor: 'rgba(140, 246, 250, 0.8)', zIndex: 10
         }}>
           <span>歌词加载中...</span>
         </div>
@@ -92,7 +92,7 @@ function Lyrics({ lrcPath, currentTime }) {
         <div style={{
           position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          backgroundColor: 'rgba(71, 207, 66, 0.8)', zIndex: 10, color: 'red'
+          backgroundColor: 'rgba(140, 246, 250, 0.8)', zIndex: 10, color: 'red'
         }}>
           <span>加载失败：{error}</span>
         </div>

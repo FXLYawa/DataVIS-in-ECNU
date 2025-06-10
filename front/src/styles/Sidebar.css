@@ -18,7 +18,7 @@
 .sidebar-title {
   margin: 0 0 8px 0;
   font-size: 16px;
-  color: #2d6a4f;
+  color: #e3f5fd;
 }
 
 .sidebar-cover {
@@ -34,7 +34,7 @@
 .sidebar-cover-text {
   bottom: 10px;
   left: 10px;
-  color: #ffffff;
+  color: #d7e5f1;
   font-size: 14px;
   background-color: rgba(0, 0, 0, 0.1); /* 半透明背景 */
   padding: 4px 8px;

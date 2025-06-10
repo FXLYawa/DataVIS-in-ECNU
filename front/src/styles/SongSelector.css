@@ -11,22 +11,22 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
-  background-color: #e8f8e8;       /* 淡淡绿意 */
+  background-color: #dff5f8;       /* 淡淡绿意 */
   border: 1px solid #b4deb3;       /* 柔和的绿色边框 */
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 1px 3px rgba(50, 115, 75, 0.1); /* 绿调的轻微阴影 */
+  box-shadow: 0 1px 3px rgba(36, 33, 78, 0.1); /* 绿调的轻微阴影 */
 }
 
 .song-dropdown-header:hover {
-  background-color: #d4f1d4;       /* 悬浮时略深的淡绿色 */
-  box-shadow: 0 2px 6px rgba(50, 115, 75, 0.12);
+  background-color: #c6f9ff;       /* 悬浮时略深的淡绿色 */
+  box-shadow: 0 2px 6px rgba(209, 25, 25, 0.12);
 }
 
 .song-dropdown-label {
   font-size: 14px;
-  color: #2d6a4f; /* 深绿色文字 */
+  color: #01161b; /* 深绿色文字 */
 }
 
 /* 箭头：使用与以前相同的纯 CSS 三角形 */
@@ -38,11 +38,11 @@
 }
 
 .arrow.down {
-  border-top: 6px solid #2d6a4f; /* 箭头颜色换成深绿色 */
+  border-top: 6px solid #104bee; /* 箭头颜色换成深绿色 */
 }
 
 .arrow.up {
-  border-bottom: 6px solid #2d6a4f;
+  border-bottom: 6px solid #0c0657;
 }
 
 /* 下拉列表浮层：圆角 + 柔和阴影 + 浅绿色底 */
@@ -53,11 +53,11 @@
   width: 100%;
   max-height: 220px;
   overflow-y: auto;
-  background-color: #f0fcf0;       /* 极浅的绿白背景 */
-  border: 1px solid #b4deb3;       /* 与 header 边框一致 */
+  background-color: #effbff;       /* 极浅的绿白背景 */
+  border: 1px solid hsl(197, 100%, 57%);       /* 与 header 边框一致 */
   border-radius: 10px;
   z-index: 10;
-  box-shadow: 0 4px 12px rgba(50, 115, 75, 0.08); /* 绿调阴影 */
+  box-shadow: 0 4px 12px rgba(9, 1, 44, 0.08); /* 绿调阴影 */
   padding: 6px 0;
   margin: 0;
   list-style: none;
@@ -69,7 +69,7 @@
 }
 
 .song-dropdown-list::-webkit-scrollbar-thumb {
-  background-color: rgba(50, 115, 75, 0.15);
+  background-color: rgba(8, 4, 58, 0.15);
   border-radius: 3px;
 }
 
@@ -85,21 +85,21 @@
 }
 
 .dropdown-item:hover {
-  background-color: #e0f7e0;     /* 悬浮时的浅绿色高亮 */
+  background-color: #606f75;     /* 悬浮时的浅绿色高亮 */
 }
 
 .dropdown-item.selected {
-  background-color: #c1eac1;     /* 选中时的柔和绿色 */
+  background-color: #0b032e;     /* 选中时的柔和绿色 */
 }
 
 .song-name {
   font-size: 14px;
   font-weight: 500;
-  color: #2d6a4f;
+  color: #05172e;
 }
 
 .song-artist {
   font-size: 12px;
-  color: #4a7a55;                /* 稍浅的绿色文字 */
+  color: #18113b;                /* 稍浅的绿色文字 */
   margin-top: 2px;
 }

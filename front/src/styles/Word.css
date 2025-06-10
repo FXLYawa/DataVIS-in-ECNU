@@ -28,9 +28,9 @@
   /* “封面” 或可视化框，强制占父容器高度的 40% */
   .word-cloud {
     flex: 0 0 40%;
-    background-color: #f5fff3;
+    background-color: #e4feff;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(50, 115, 75, 0.1);
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +41,7 @@
   /* “歌曲列表” 那块，占父容器高度的 60% 并且内部滚动 */
   .word-link {
     flex: 0 0 60%;
-    background-color: #f5fff3;
+    background-color: #e4feff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(50, 115, 75, 0.1);
   
@@ -60,7 +60,7 @@
     height: 100%;   /* 继承自 .home-container 的 100vh */
     box-sizing: border-box;
 
-    background-color: #f5fff3;
+    background-color: #e4feff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(50, 115, 75, 0.1);
   

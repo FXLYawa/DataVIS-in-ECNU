@@ -17,7 +17,7 @@
 .music-cover {
   border-radius: 12px;
   width: 59%;
-  background-color: #f5fff3;
+  background-color: #d6f2fa;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(50, 115, 75, 0.1);
   display: flex;
@@ -28,7 +28,7 @@
 .music-lyrics {
   width:39%;
   background-color:black;
-  background-color: #f5fff3;
+  background-color: #d6f2fa;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(50, 115, 75, 0.1);
   display: flex;
@@ -46,7 +46,7 @@
   border-radius: 12px;
   height:55%;
   flex: 1; /* 每个框占据可用空间 */
-  background-color: #f5fff3;
+  background-color: #d6f2fa;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(50, 115, 75, 0.1);
   margin: 5px;
@@ -57,7 +57,7 @@
   border-radius: 12px;
   height:40%;
   flex: 1; /* 每个框占据可用空间 */
-  background-color: #f5fff3;
+  background-color: #d6f2fa;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(50, 115, 75, 0.1);
   margin: 5px;

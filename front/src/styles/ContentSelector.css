@@ -12,22 +12,22 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
-  background-color: #e8f8e8;       /* 与 SongDropdown 对齐 */
-  border: 1px solid #b4deb3;
+  background-color: #d4f8f8;       /* 与 SongDropdown 对齐 */
+  border: 1px solid #072cfc;
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 1px 3px rgba(50, 115, 75, 0.1);
+  box-shadow: 0 1px 3px rgba(85, 130, 255, 0.1);
 }
 
 .content-dropdown-header:hover {
-  background-color: #d4f1d4;
+  background-color: #e4deff;
   box-shadow: 0 2px 6px rgba(50, 115, 75, 0.12);
 }
 
 .content-dropdown-label {
   font-size: 14px;
-  color: #2d6a4f;
+  color: #090b29;
 }
 
 .arrow {
@@ -38,11 +38,11 @@
 }
 
 .arrow.down {
-  border-top: 6px solid #2d6a4f;
+  border-top: 6px solid #040a16;
 }
 
 .arrow.up {
-  border-bottom: 6px solid #2d6a4f;
+  border-bottom: 6px solid #020d30;
 }
 
 .content-dropdown-list {
@@ -52,11 +52,11 @@
   width: 100%;
   max-height: 220px;
   overflow-y: auto;
-  background-color: #f0fcf0;
+  background-color: #e7fafa;
   border: 1px solid #b4deb3;
   border-radius: 10px;
   z-index: 10;
-  box-shadow: 0 4px 12px rgba(50, 115, 75, 0.08);
+  box-shadow: 0 4px 12px rgba(56, 27, 8, 0.08);
   padding: 6px 0;
   margin: 0;
   list-style: none;
@@ -78,13 +78,13 @@
   cursor: pointer;
   transition: background-color 0.2s;
   font-size: 14px;
-  color: #2d6a4f;
+  color: #0b0735;
 }
 
 .dropdown-item:hover {
-  background-color: #e0f7e0;
+  background-color: #dbf0ff;
 }
 
 .dropdown-item.selected {
-  background-color: #c1eac1;
+  background-color: #a7dafc;
 }
