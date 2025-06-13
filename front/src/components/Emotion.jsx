@@ -100,13 +100,13 @@ async function  EmotionDraw(chartDom, song) {
     },
     xAxis: [
       {
-        name: 'y下刻度',
+        name: '情感强度-',
         type: 'value',
         nameLocation: 'middle',
         nameGap: 30,
       },
       {
-        name: 'y上刻度',
+        name: '情感强度+',
         type: 'value',
         position: 'middle',
         nameLocation: 'center',
@@ -119,13 +119,13 @@ async function  EmotionDraw(chartDom, song) {
     ],
     yAxis: [
       {
-        name: 'x左刻度',
+        name: '情感极性-',
         type: 'value',
         nameLocation: 'middle',
         nameGap: 30,
       },
       {
-        name: 'x右刻度',
+        name: '情感极性+',
         type: 'value',
         position: 'middle',
         nameLocation: 'center',

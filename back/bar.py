@@ -28,7 +28,7 @@ SONG_FILE_MAPPING = {
     "交换余生": "JJ1-jhys.txt",      # 示例，根据实际文件修改
     "暂时的记号": "JJ2-zsdjh.txt",
     "离开的那一些":"JJ4-lkdnyx.txt",
-    "幸存者":"JJ5-xcz"# 示例，根据实际文件修改
+    "幸存者":"JJ5-xcz.txt"# 示例，根据实际文件修改
 }
 
 SONG_ID_MAPPING = {

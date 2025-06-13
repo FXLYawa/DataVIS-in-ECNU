@@ -8,7 +8,7 @@ import axios from 'axios';
 const baseurl = 'http://127.0.0.1:8000/api/imaginative';
 
 async function getImage(song) {
-  return {'images':[{'url':'/photo/JJ1.jpg'}]};
+  //return {'images':[{'url':'/photo/JJ1.jpg'}]};
   try {
     const response = await axios.get(baseurl + song.head);
     return response.data;

@@ -4,6 +4,10 @@ from collections import defaultdict
 import re
 import os
 from typing import List
+os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
+#os.environ['KMP_DUPLICATE_LIB_OK']='TRUE'
+from cemotion import Cemotion
+c = Cemotion()
 
 SONG_ID_TO_FILE = {
     "jhys": "JJ1-jhys",
@@ -56,7 +60,7 @@ def analyze_lyrics_to_vectors(song_id: str) -> List[list]:
         # 第一维度：情感极性（-1负面 ~ 1正面）
         polarity = round(s.sentiments * 2 - 1, 6)  
         # 第二维度：情感波动强度（基于词频）
-        intensity = round(min(freq/10, 1.0), 6)   
+        intensity = round(float(c.predict(word)) * 2 - 1, 6)   
         result.append([polarity, intensity, word, freq])
     
     return result
@@ -64,3 +68,12 @@ def analyze_lyrics_to_vectors(song_id: str) -> List[list]:
 if __name__ == "__main__":
     a=analyze_lyrics_to_vectors("jhys")
     print(a)
+    
+    
+# import os
+# os.environ['KMP_DUPLICATE_LIB_OK']='TRUE'
+# from cemotion import Cemotion
+# c = Cemotion()
+# text = "这个产品质量很好，但服务态度差。"
+# score = c.predict(text)
+# print(score)  # 输出示例：0.63（整体偏正面，但包含矛盾）
